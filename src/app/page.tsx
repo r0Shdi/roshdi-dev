@@ -73,7 +73,7 @@ export default function HomePage() {
       {/* Buttons */}
       <div className="flex gap-4 flex-wrap justify-center">
       <Link
-  href="/projects"
+  href="/portfolio"
   aria-label="View Projects"
   className="
     group relative inline-flex items-center gap-2
