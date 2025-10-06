@@ -3,9 +3,14 @@ import { ReactNode } from "react";
 import Navbar from "@/components/Navbar";
 
 export const metadata = {
-  title: "Your Name | Portfolio",
-  description: "Modern portfolio website built with Next.js and Tailwind CSS",
-};
+  title: "Roshdi Farag | Portfolio",
+  description: "Its Time To know me better",
+
+    icons: {
+      icon: "/roshdi.png", // path relative to /public
+    },
+  };
+
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
