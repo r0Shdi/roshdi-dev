@@ -1,26 +1,135 @@
-@import "tailwindcss";
+/* ==========================================================
+   🧠 GLOBAL STYLES — TAILWIND + CUSTOM THEME VARIABLES
+   Balanced, readable colors for both light and dark modes.
+   ========================================================== */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+   @import "tailwindcss";
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+   /* ---------------------------
+      🌞 Light Theme
+      --------------------------- */
+   :root {
+     /* Background & text */
+     --background: #f9fafb; /* Soft off-white */
+     --foreground: #111827; /* Slightly darker than before for better readability */
+   
+     /* Accent colors */
+     --accent: #4f46e5; /* Indigo-600 */
+     --accent-hover: #4338ca; /* Indigo-700 */
+   
+     /* Supporting tones */
+     --muted: #f3f4f6; /* Light gray for sections/cards */
+     --border: #e5e7eb;
+   
+     /* Typography */
+     --text-secondary: #374151; /* Darker gray (stronger contrast in light mode) */
+   
+     /* Transitions */
+     --transition-speed: 0.3s;
+   }
+   
+   /* ---------------------------
+      🌚 Dark Theme
+      --------------------------- */
+   .dark {
+     --background: #0b0f19; /* Deep navy-charcoal */
+     --foreground: #f3f4f6; /* Bright text */
+     --accent: #10b981; /* Emerald-500 */
+     --accent-hover: #059669; /* Emerald-600 */
+     --muted: #111827;
+     --border: #1f2937;
+     --text-secondary: #d1d5db; /* Slightly brighter gray for better readability */
+   }
+   
+   /* ---------------------------
+      🎨 Tailwind Inline Theme
+      --------------------------- */
+   @theme inline {
+     --color-background: var(--background);
+     --color-foreground: var(--foreground);
+     --color-accent: var(--accent);
+     --color-accent-hover: var(--accent-hover);
+     --color-muted: var(--muted);
+     --color-border: var(--border);
+     --color-text-secondary: var(--text-secondary);
+   }
+   
+   /* ---------------------------
+      🧱 Base Styles
+      --------------------------- */
+   html {
+     scroll-behavior: smooth;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+   }
+   
+   body {
+     background-color: var(--background);
+     color: var(--foreground);
+     font-family: "Inter", system-ui, sans-serif;
+     transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+     min-height: 100vh;
+     line-height: 1.7;
+   }
+   
+   /* Headings */
+   h1, h2, h3, h4, h5, h6 {
+     font-family: "Space Grotesk", sans-serif;
+     font-weight: 600;
+     color: var(--foreground);
+   }
+   
+   /* Paragraphs & Lists */
+   p, li {
+     color: var(--text-secondary);
+   }
+   
+   /* Links */
+   a {
+     color: var(--accent);
+     text-decoration: none;
+     transition: color var(--transition-speed) ease;
+   }
+   
+   a:hover {
+     color: var(--accent-hover);
+   }
+   
+   /* Buttons */
+   button {
+     cursor: pointer;
+     transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+   }
+   
+   /* ---------------------------
+      🌈 Custom Utilities
+      --------------------------- */
+   @utility text-balance {
+     text-wrap: balance;
+   }
+   
+   /* ---------------------------
+      ✨ Extra polish
+      --------------------------- */
+   
+   /* Scrollbar */
+   ::-webkit-scrollbar {
+     width: 8px;
+   }
+   ::-webkit-scrollbar-track {
+     background: var(--muted);
+   }
+   ::-webkit-scrollbar-thumb {
+     background: var(--accent);
+     border-radius: 4px;
+   }
+   ::-webkit-scrollbar-thumb:hover {
+     background: var(--accent-hover);
+   }
+   
+   /* Text selection */
+   ::selection {
+     background: var(--accent);
+     color: #ffffff;
+   }
+   
