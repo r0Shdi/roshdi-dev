@@ -26,7 +26,7 @@ export default function HomePage() {
     >
       {/* Header */}
       <h1 className="text-4xl md:text-5xl font-bold mb-4 text-accent">
-        Hi, I'm Roshdi Farag 👋
+      Hi, I&apos;m Roshdi Farag 👋
       </h1>
 
       {/* Intro text */}
